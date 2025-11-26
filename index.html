@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorante - Menu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { text-align: center; }
+    .piatto { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    .piatto h3 { margin: 0; }
+  </style>
+</head>
+<body>
+  <h1>Menu del ristorante</h1>
+  <div id="menu"></div>
+
+  <script>
+    async function loadMenu() {
+      const response = await fetch('menu/menu.json');
+      const piatti = await response.json();
+
+      let html = '';
+      piatti.forEach(p => {
+        html += `
+          <div class="piatto">
+            <h3>${p.nome} - ${p.prezzo}€</h3>
+            <p>${p.descrizione}</p>
+          </div>
+        `;
+      });
+      document.getElementById('menu').innerHTML = html;
+    }
+    loadMenu();
+  </script>
+</body>
+</html>
