@@ -1,0 +1,4 @@
+[
+  { "nome": "Margherita", "prezzo": "7", "descrizione": "Pomodoro, mozzarella e basilico", "categoria": "Pizza", "immagine": "" },
+  { "nome": "Carbonara", "prezzo": "12", "descrizione": "Pasta con guanciale, pecorino e uova", "categoria": "Pasta", "immagine": "" }
+]
